@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Non Solo Pizz@.It — Pizzeria Artigianale, Farinata e Panuozzi a Villastellone</title>
   <meta name="description" content="Non Solo Pizz@.It in Piazza della Libertà 16 a Villastellone (TO): pizza al mattone, al tegamino e al taglio con farina Caputo di Napoli, farinate, focacce, panuozzi napoletani, asporto e consegna a domicilio gratuita." />
+  <link rel="icon" type="image/png" href="assets/logo-original.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- OPENING BRAND SPLASH: Original Company Logo Only -->
+  <div class="brand-intro" id="brand-intro" aria-hidden="true">
+    <div class="brand-intro__glow"></div>
+    <img src="assets/logo-original.png" alt="Non Solo Pizz@.It" class="brand-intro__logo" width="480" height="245" />
+  </div>
+
+  <!-- CUSTOM INTERACTIVE CURSOR (desktop pointer:fine only) -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
   <!-- Subtle Top Info Strip -->
   <div class="top-bar">
     <div class="container top-bar__inner">
@@ -29,24 +40,11 @@
     </div>
   </div>
 
-  <!-- Sticky Navigation Header -->
+  <!-- Sticky Dark-Glass Navigation Header with Original Company Logo -->
   <header class="site-header" id="top">
     <div class="container header__inner">
       <a href="#top" class="brand" aria-label="Non Solo Pizz@.It Home">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 36 36" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="36" height="36" rx="10" fill="#B83B24"/>
-            <path d="M18 7L29 26.5C25.6 28.4 21.9 29.5 18 29.5C14.1 29.5 10.4 28.4 7 26.5L18 7Z" fill="#FAF6F0"/>
-            <path d="M18 11.2L25.4 24.4C23.1 25.5 20.6 26.1 18 26.1C15.4 26.1 12.9 25.5 10.6 24.4L18 11.2Z" fill="#D98A32"/>
-            <circle cx="16" cy="19.5" r="1.8" fill="#B83B24"/>
-            <circle cx="20.5" cy="21.5" r="1.8" fill="#B83B24"/>
-            <circle cx="18" cy="15.5" r="1.4" fill="#2F6A4A"/>
-          </svg>
-        </span>
-        <span class="brand__text">
-          <strong class="brand__name">Non Solo Pizz@.It</strong>
-          <span class="brand__sub">Villastellone · Dal forno alla piazza</span>
-        </span>
+        <img src="assets/logo-original.png" alt="Non Solo Pizz@.It" class="brand__logo-img" width="132" height="67" />
       </a>
 
       <nav class="main-nav" aria-label="Navigazione principale">
@@ -58,14 +56,14 @@
       </nav>
 
       <div class="header__cta-group">
-        <button type="button" class="btn btn--ghost btn--sm" id="open-qr-btn">
+        <button type="button" class="btn btn--glass btn--sm magnetic" id="open-qr-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
             <path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2"/>
           </svg>
           <span>Menù QR</span>
         </button>
-        <button type="button" class="btn btn--primary btn--sm" id="header-order-btn">
+        <button type="button" class="btn btn--primary btn--sm magnetic" id="header-order-btn">
           <span>Ordina</span>
           <span class="cart-pill" id="header-cart-count">0</span>
         </button>
@@ -77,7 +75,7 @@
       </div>
     </div>
 
-    <!-- Clean Mobile Navigation Drawer (pushes flow cleanly, zero overlap) -->
+    <!-- Clean Mobile Navigation Drawer -->
     <div class="mobile-nav-panel" id="mobile-nav-panel" hidden>
       <div class="container mobile-nav-panel__inner">
         <a href="#specialita" class="mobile-nav-link">Specialità e Impasto</a>
@@ -86,8 +84,8 @@
         <a href="#recensioni" class="mobile-nav-link">Recensioni</a>
         <a href="#contatti" class="mobile-nav-link">Orari e Mappa</a>
         <div class="mobile-nav-actions">
-          <button type="button" class="btn btn--ghost btn--full" id="mobile-qr-btn">Apri Menù QR Code</button>
-          <a href="tel:+390119696984" class="btn btn--outline btn--full">Chiama 011 9696984</a>
+          <button type="button" class="btn btn--glass btn--full" id="mobile-qr-btn">Apri Menù QR Code</button>
+          <a href="tel:+390119696984" class="btn btn--outline-light btn--full">Chiama 011 9696984</a>
           <a href="https://wa.me/393388899972?text=Buonasera%2C%20vorrei%20informazioni%20per%20un%20ordine%20da%20Non%20Solo%20Pizz%40.It" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full">Scrivici su WhatsApp</a>
         </div>
       </div>
@@ -95,28 +93,35 @@
   </header>
 
   <main>
-    <!-- HERO SECTION: Clean 2-column split, zero text overlapping images -->
-    <section class="hero">
+    <!-- HERO SECTION: Real Brick Oven Photograph Background + 3D WebGL Embers + Cursor Spotlight + Zero Overlap Split Grid -->
+    <section class="hero" id="hero-stage">
+      <div class="hero__bg-wrap" aria-hidden="true">
+        <div class="hero__bg-photo" id="hero-parallax-bg"></div>
+        <div class="hero__bg-scrim"></div>
+        <canvas class="hero__webgl" id="hero-3d-canvas"></canvas>
+        <div class="cursor-spotlight" id="hero-spotlight"></div>
+      </div>
+
       <div class="container hero__grid">
         <div class="hero__content">
-          <div class="eyebrow-row">
-            <span class="eyebrow">Pizzeria Artigianale · Villastellone</span>
+          <div class="hero__brand-lockup reveal-3d">
+            <img src="assets/logo-original.png" alt="Logo originale Non Solo Pizz@.It" class="hero__original-logo" width="240" height="122" />
           </div>
 
-          <h1 class="hero__title">
+          <h1 class="hero__title reveal-3d">
             Pizza leggera, farinata croccante e sapori genuini nel cuore della piazza.
           </h1>
 
-          <p class="hero__lead">
+          <p class="hero__lead reveal-3d">
             Ogni giorno impastiamo con <strong>farina Caputo di Napoli</strong> e olio extravergine d'oliva per offrirti pizza al mattone, al tegamino, al taglio, farinate dorate, focacce e panuozzi napoletani. Da gustare ai tavoli su Piazza della Libertà, da asporto o con <strong>consegna a domicilio gratuita</strong> a pranzo e cena.
           </p>
 
-          <div class="hero__actions">
-            <a href="#menu" class="btn btn--primary btn--lg">Sfoglia il Menù</a>
-            <a href="tel:+390119696984" class="btn btn--outline btn--lg">Chiama 011 9696984</a>
+          <div class="hero__actions reveal-3d">
+            <a href="#menu" class="btn btn--primary btn--lg magnetic">Sfoglia il Menù</a>
+            <a href="tel:+390119696984" class="btn btn--outline-light btn--lg magnetic">Chiama 011 9696984</a>
           </div>
 
-          <div class="hero__facts">
+          <div class="hero__facts reveal-3d">
             <div class="fact-box">
               <span class="fact-box__label">Consegna</span>
               <strong class="fact-box__value">Gratuita pranzo e cena</strong>
@@ -133,15 +138,18 @@
         </div>
 
         <div class="hero__media">
-          <figure class="media-frame media-frame--hero">
+          <figure class="media-frame media-frame--hero tilt-3d" data-tilt-max="7">
             <img src="assets/hero-pizza.jpg" alt="Pizza artigianale al mattone di Non Solo Pizz@.It con mozzarella di bufala, pomodoro e basilico fresco" width="1200" height="900" loading="eager" />
+            <span class="tilt-glare" aria-hidden="true"></span>
           </figure>
           <div class="hero__submedia">
-            <figure class="media-frame media-frame--sub">
+            <figure class="media-frame media-frame--sub tilt-3d" data-tilt-max="8">
               <img src="assets/tegamino-farinata.jpg" alt="Pizza al tegamino e farinata di ceci dorata con rosmarino" width="800" height="600" loading="eager" />
+              <span class="tilt-glare" aria-hidden="true"></span>
             </figure>
-            <figure class="media-frame media-frame--sub">
+            <figure class="media-frame media-frame--sub tilt-3d" data-tilt-max="8">
               <img src="assets/pizze-golose.jpg" alt="Pizza Non Solo Pizz@ con mozzarella di bufala, bresaola, rucola e scaglie di parmigiano" width="800" height="600" loading="eager" />
+              <span class="tilt-glare" aria-hidden="true"></span>
             </figure>
           </div>
         </div>
@@ -151,7 +159,7 @@
     <!-- SPECIALITA & CRAFT SECTION -->
     <section class="section section--tinted" id="specialita">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head scroll-reveal">
           <span class="eyebrow">La nostra filosofia</span>
           <h2 class="section-title">Rapidità, qualità e cortesia in ogni sfornata</h2>
           <p class="section-desc">
@@ -160,9 +168,9 @@
         </div>
 
         <div class="cards-grid cards-grid--3">
-          <article class="feature-card">
+          <article class="feature-card tilt-3d scroll-reveal" data-tilt-max="5">
             <figure class="feature-card__media">
-              <img src="assets/impasto-caputo.jpg" alt="Stesura artigianale dell'impasto con farina Caputo di Napoli" width="800" height="600" loading="lazy" />
+              <img src="assets/impasto-caputo.jpg" alt="Stesura artigianale dell'impasto con farina Caputo di Napoli" width="800" height="600" loading="eager" />
             </figure>
             <div class="feature-card__body">
               <span class="tag-label">L'Impasto</span>
@@ -171,11 +179,12 @@
                 Lavoriamo esclusivamente farina di grano di qualità Caputo di Napoli, olio extravergine d'oliva, lievito di birra e sale, per una pizza leggera e facilmente digeribile.
               </p>
             </div>
+            <span class="tilt-glare" aria-hidden="true"></span>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card tilt-3d scroll-reveal" data-tilt-max="5">
             <figure class="feature-card__media">
-              <img src="assets/tegamino-farinata.jpg" alt="Pizza al tegamino torinese e farinata di ceci" width="800" height="600" loading="lazy" />
+              <img src="assets/tegamino-farinata.jpg" alt="Pizza al tegamino torinese e farinata di ceci" width="800" height="600" loading="eager" />
             </figure>
             <div class="feature-card__body">
               <span class="tag-label">Tradizione Piemontese</span>
@@ -184,11 +193,12 @@
                 Scegli la tua consistenza preferita: sottile al mattone, soffice e dorata al tegamino, pratica al taglio oppure una farinata di ceci calda, normale o farcita.
               </p>
             </div>
+            <span class="tilt-glare" aria-hidden="true"></span>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card tilt-3d scroll-reveal" data-tilt-max="5">
             <figure class="feature-card__media">
-              <img src="assets/panuozzo-focaccia.jpg" alt="Panuozzo napoletano farcito e focaccia al rosmarino" width="800" height="600" loading="lazy" />
+              <img src="assets/panuozzo-focaccia.jpg" alt="Panuozzo napoletano farcito e focaccia al rosmarino" width="800" height="600" loading="eager" />
             </figure>
             <div class="feature-card__body">
               <span class="tag-label">Non Solo Pizza</span>
@@ -197,7 +207,28 @@
                 Panuozzi napoletani farciti al momento, focacce al rosmarino, lardo, speck o crudo, pizza alla Nutella, teglie miste e pizze giganti per condividere.
               </p>
             </div>
+            <span class="tilt-glare" aria-hidden="true"></span>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL WOOD-OVEN ATMOSPHERIC INTERLUDE STRIP -->
+    <section class="oven-band" aria-label="Cottura autentica">
+      <div class="oven-band__bg" id="oven-parallax-bg" aria-hidden="true"></div>
+      <div class="oven-band__scrim" aria-hidden="true"></div>
+      <div class="container oven-band__inner scroll-reveal">
+        <div class="oven-band__metric">
+          <strong>6 giorni su 7</strong>
+          <span>Aperti pranzo e cena (riposo il martedì)</span>
+        </div>
+        <div class="oven-band__metric">
+          <strong>75 proposte</strong>
+          <span>Pizze, farinate, focacce, panuozzi e teglie</span>
+        </div>
+        <div class="oven-band__metric">
+          <strong>Domicilio gratis</strong>
+          <span>Consegna calda direttamente a Villastellone</span>
         </div>
       </div>
     </section>
@@ -205,7 +236,7 @@
     <!-- INTERACTIVE MENU SECTION -->
     <section class="section" id="menu">
       <div class="container">
-        <div class="section-head section-head--row">
+        <div class="section-head section-head--row scroll-reveal">
           <div class="section-head__text">
             <span class="eyebrow">Menù Digitale Interattivo</span>
             <h2 class="section-title">Scegli le tue preferite e componi l'ordine</h2>
@@ -221,8 +252,8 @@
           </div>
         </div>
 
-        <!-- Controls Panel: Clean flex/grid rows, zero overlap -->
-        <div class="menu-controls">
+        <!-- Controls Panel -->
+        <div class="menu-controls scroll-reveal">
           <div class="category-tabs" role="tablist" aria-label="Categorie del menù" id="category-tabs">
             <button type="button" class="tab-btn is-active" data-cat="golose" role="tab" aria-selected="true">Pizze Golose</button>
             <button type="button" class="tab-btn" data-cat="classiche" role="tab" aria-selected="false">Pizze Classiche</button>
@@ -269,24 +300,29 @@
       </div>
     </section>
 
-    <!-- PIAZZA, ATMOSFERA & FESTE SECTION -->
-    <section class="section section--dark" id="piazza">
+    <!-- PIAZZA, ATMOSFERA & FESTE SECTION (with REAL Villastellone Piazza della Libertà photographic background!) -->
+    <section class="section section--dark section--piazza-bg" id="piazza">
+      <div class="piazza-bg__photo" id="piazza-parallax-bg" aria-hidden="true"></div>
+      <div class="piazza-bg__scrim" aria-hidden="true"></div>
+      <div class="cursor-spotlight" id="piazza-spotlight" aria-hidden="true"></div>
+
       <div class="container split-panel">
-        <div class="split-panel__media">
-          <figure class="media-frame media-frame--dark">
-            <img src="assets/piazza-locale.jpg" alt="Tavolini all'aperto su Piazza della Libertà a Villastellone al tramonto" width="1200" height="900" loading="eager" />
+        <div class="split-panel__media scroll-reveal">
+          <figure class="media-frame media-frame--dark tilt-3d" data-tilt-max="6">
+            <img src="assets/bg-piazza-villastellone.jpg" alt="Fotografia reale di Piazza della Libertà a Villastellone (TO)" width="1200" height="900" loading="eager" />
+            <span class="tilt-glare" aria-hidden="true"></span>
           </figure>
         </div>
 
-        <div class="split-panel__content">
-          <span class="eyebrow eyebrow--warm">Piazza della Libertà, 16</span>
+        <div class="split-panel__content scroll-reveal">
+          <span class="eyebrow eyebrow--warm">Piazza della Libertà, 16 · Villastellone</span>
           <h2 class="section-title section-title--light">Tavolini in piazza, asporto rapido e feste in compagnia</h2>
           <p class="section-desc section-desc--light">
-            Siamo nel centro di Villastellone, con tavoli all'aperto affacciati sulla piazza — uno spazio tranquillo e accogliente ideale per serate tra amici e famiglie con bambini.
+            Siamo proprio nel centro di Villastellone, con tavoli all'aperto affacciati su Piazza della Libertà — uno spazio tranquillo e accogliente ideale per serate tra amici e famiglie con bambini.
           </p>
 
           <div class="service-list">
-            <div class="service-row">
+            <div class="service-row tilt-3d" data-tilt-max="3">
               <div class="service-row__icon" aria-hidden="true">01</div>
               <div>
                 <h3 class="service-row__title">Asporto &amp; Consegna a Domicilio Gratuita</h3>
@@ -294,7 +330,7 @@
               </div>
             </div>
 
-            <div class="service-row">
+            <div class="service-row tilt-3d" data-tilt-max="3">
               <div class="service-row__icon" aria-hidden="true">02</div>
               <div>
                 <h3 class="service-row__title">Compleanni, Cerimonie Informali &amp; Gruppi</h3>
@@ -302,7 +338,7 @@
               </div>
             </div>
 
-            <div class="service-row">
+            <div class="service-row tilt-3d" data-tilt-max="3">
               <div class="service-row__icon" aria-hidden="true">03</div>
               <div>
                 <h3 class="service-row__title">Prenota per il tuo evento o tavolo</h3>
@@ -312,7 +348,7 @@
           </div>
 
           <div class="split-panel__actions">
-            <a href="https://wa.me/393388899972?text=Buonasera%2C%20vorrei%20prenotare%20teglie%20o%20un%20tavolo%20da%20Non%20Solo%20Pizz%40.It" target="_blank" rel="noopener noreferrer" class="btn btn--warm btn--lg">Richiedi per Feste o Tavoli</a>
+            <a href="https://wa.me/393388899972?text=Buonasera%2C%20vorrei%20prenotare%20teglie%20o%20un%20tavolo%20da%20Non%20Solo%20Pizz%40.It" target="_blank" rel="noopener noreferrer" class="btn btn--warm btn--lg magnetic">Richiedi per Feste o Tavoli</a>
           </div>
         </div>
       </div>
@@ -321,7 +357,7 @@
     <!-- REVIEWS SECTION -->
     <section class="section section--tinted" id="recensioni">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head scroll-reveal">
           <span class="eyebrow">Cosa dicono i clienti</span>
           <h2 class="section-title">Apprezzati ogni giorno a Villastellone</h2>
           <p class="section-desc">
@@ -330,7 +366,7 @@
         </div>
 
         <div class="cards-grid cards-grid--3">
-          <article class="review-card">
+          <article class="review-card tilt-3d scroll-reveal" data-tilt-max="5">
             <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
             <p class="review-card__quote">
               «Impasto leggerissimo e ben digeribile, ingredienti freschi e farciture sempre abbondanti. Anche la farinata è davvero buonissima e croccante al punto giusto.»
@@ -339,9 +375,10 @@
               <strong>Cliente abituale</strong>
               <span>Asporto e domicilio · Villastellone</span>
             </div>
+            <span class="tilt-glare" aria-hidden="true"></span>
           </article>
 
-          <article class="review-card">
+          <article class="review-card tilt-3d scroll-reveal" data-tilt-max="5">
             <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
             <p class="review-card__quote">
               «Cortesia, puntualità e tanta simpatia. Con i tavolini su Piazza della Libertà è perfetto anche d'estate con i bambini per godersi una pizza in tranquillità.»
@@ -350,9 +387,10 @@
               <strong>Famiglia del paese</strong>
               <span>Serata in piazza · Villastellone</span>
             </div>
+            <span class="tilt-glare" aria-hidden="true"></span>
           </article>
 
-          <article class="review-card">
+          <article class="review-card tilt-3d scroll-reveal" data-tilt-max="5">
             <div class="review-card__stars" aria-label="5 stelle su 5">★★★★★</div>
             <p class="review-card__quote">
               «Ottimo rapporto qualità-prezzo, consegne puntuali e una scelta amplissima tra pizze classiche, speciali, panuozzi e focacce. Una garanzia in paese.»
@@ -361,6 +399,7 @@
               <strong>Recensione verificata</strong>
               <span>Pizze speciali &amp; Panuozzi</span>
             </div>
+            <span class="tilt-glare" aria-hidden="true"></span>
           </article>
         </div>
       </div>
@@ -369,14 +408,13 @@
     <!-- CONTACTS, HOURS & MAP SECTION -->
     <section class="section" id="contatti">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head scroll-reveal">
           <span class="eyebrow">Dove siamo e Orari</span>
           <h2 class="section-title">Passa a trovarci o ordina in un clic</h2>
         </div>
 
         <div class="contact-grid">
-          <!-- Hours Card -->
-          <div class="contact-card">
+          <div class="contact-card scroll-reveal">
             <h3 class="contact-card__title">Orari di Apertura</h3>
             <ul class="hours-list">
               <li class="hours-row" data-day="1">
@@ -410,8 +448,7 @@
             </ul>
           </div>
 
-          <!-- Direct Contacts Card -->
-          <div class="contact-card">
+          <div class="contact-card scroll-reveal">
             <h3 class="contact-card__title">Contatti Diretti</h3>
             <div class="contact-items">
               <div class="contact-item">
@@ -433,14 +470,13 @@
             </div>
 
             <div class="contact-actions">
-              <a href="tel:+390119696984" class="btn btn--primary btn--full">Chiama in Pizzeria</a>
-              <a href="https://wa.me/393388899972?text=Buonasera%2C%20vorrei%20effettuare%20un%20ordine%20da%20Non%20Solo%20Pizz%40.It" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--full">Apri Chat WhatsApp</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=Piazza+della+Liberta+16+10029+Villastellone+TO" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--full">Indicazioni su Google Maps</a>
+              <a href="tel:+390119696984" class="btn btn--primary btn--full magnetic">Chiama in Pizzeria</a>
+              <a href="https://wa.me/393388899972?text=Buonasera%2C%20vorrei%20effettuare%20un%20ordine%20da%20Non%20Solo%20Pizz%40.It" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--full magnetic">Apri Chat WhatsApp</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Piazza+della+Liberta+16+10029+Villastellone+TO" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--full magnetic">Indicazioni su Google Maps</a>
             </div>
           </div>
 
-          <!-- Map Frame -->
-          <div class="map-card">
+          <div class="map-card scroll-reveal">
             <iframe
               title="Mappa di Non Solo Pizz@.It in Piazza della Libertà 16, Villastellone"
               src="https://www.openstreetmap.org/export/embed.html?bbox=7.7375%2C44.9145%2C7.7495%2C44.9225&amp;layer=mapnik&amp;marker=44.9186%2C7.7435"
@@ -457,7 +493,7 @@
   <footer class="site-footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <strong>Non Solo Pizz@.It</strong>
+        <img src="assets/logo-original.png" alt="Non Solo Pizz@.It" class="footer__logo-img" width="144" height="73" />
         <span>Piazza della Libertà, 16 · 10029 Villastellone (TO) · Tel. 011 9696984 · Cell. 338 8899972</span>
       </div>
       <div class="footer__credit">
@@ -466,14 +502,14 @@
     </div>
   </footer>
 
-  <!-- FLOATING CART BAR (appears cleanly only when items > 0) -->
+  <!-- FLOATING CART BAR -->
   <div class="cart-dock" id="cart-dock" hidden>
     <div class="container cart-dock__inner">
       <div class="cart-dock__summary">
         <strong id="dock-count">0 articoli</strong>
         <span id="dock-total">Totale stimato: € 0,00</span>
       </div>
-      <button type="button" class="btn btn--primary" id="dock-open-btn">Rivedi e Invia Ordine</button>
+      <button type="button" class="btn btn--primary magnetic" id="dock-open-btn">Rivedi e Invia Ordine</button>
     </div>
   </div>
 
@@ -561,6 +597,11 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <!-- Smooth Motion & 3D Engine (GSAP + ScrollTrigger + Lenis + Three.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
